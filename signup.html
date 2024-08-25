@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+<div class="card form-section">
+    <div class="card-body">
+        <h3 class="card-title">Sign Up</h3>
+        <form action="{{ url_for('signup') }}" method="POST">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="role">Role</label>
+                <select class="form-control" id="role" name="role" required>
+                    <option value="Donor">Donor</option>
+                    <option value="Beneficiary">Beneficiary</option>
+                    <option value="Volunteer">Volunteer</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
